@@ -1,0 +1,55 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for coin -->
+  <circle cx="100" cy="100" r="95" fill="#ffffff" stroke="#e0e0e0" stroke-width="3"/>
+  
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="85" fill="#f8f8f8" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <!-- Korean KGAT (traditional hat) - Low angle view like in photo -->
+  
+  <!-- Wide flat brim (single layer, clean) -->
+  <ellipse cx="100" cy="128" rx="70" ry="10" fill="#1a1a1a"/>
+  
+  <!-- Cylindrical crown (viewed from below angle) -->
+  <!-- Crown main body (trapezoid showing perspective) -->
+  <path d="M 82 85 L 118 85 L 122 128 L 78 128 Z" fill="#1a1a1a"/>
+  
+  <!-- Crown top (visible from this angle) -->
+  <ellipse cx="100" cy="85" rx="18" ry="6" fill="#2d2d2d"/>
+  
+  <!-- Crown bottom (where it meets brim) -->
+  <ellipse cx="100" cy="128" rx="22" ry="4" fill="#0a0a0a"/>
+  
+  <!-- Crown side highlight -->
+  <path d="M 85 90 L 95 90 L 98 123 L 82 123 Z" fill="#404040" opacity="0.4"/>
+  
+  <!-- Chin strap (viewed from below) -->
+  <!-- Attachment points on brim -->
+  <circle cx="75" cy="128" r="2.5" fill="#654321"/>
+  <circle cx="125" cy="128" r="2.5" fill="#654321"/>
+  
+  <!-- Left side of chin strap (more curved due to perspective) -->
+  <path d="M 75 128 Q 65 143 60 158 Q 65 173 80 178" stroke="#8B4513" stroke-width="2.5" fill="none"/>
+  
+  <!-- Right side of chin strap -->
+  <path d="M 125 128 Q 135 143 140 158 Q 135 173 120 178" stroke="#8B4513" stroke-width="2.5" fill="none"/>
+  
+  <!-- Bottom connection of chin strap (very visible) -->
+  <path d="M 80 178 Q 100 183 120 178" stroke="#8B4513" stroke-width="2.5" fill="none"/>
+  
+  <!-- Decorative knot at bottom -->
+  <ellipse cx="100" cy="180" rx="4" ry="2" fill="#654321"/>
+  
+  <!-- Brim texture (concentric circles from below view) -->
+  <ellipse cx="100" cy="128" rx="65" ry="8" stroke="#333333" stroke-width="0.4" opacity="0.3" fill="none"/>
+  <ellipse cx="100" cy="128" rx="55" ry="6" stroke="#333333" stroke-width="0.3" opacity="0.2" fill="none"/>
+  <ellipse cx="100" cy="128" rx="45" ry="4" stroke="#333333" stroke-width="0.2" opacity="0.15" fill="none"/>
+  
+  <!-- Clean border text -->
+  <defs>
+    <path id="circle-text" d="M 100 100 m -70 0 a 70 70 0 1 1 140 0 a 70 70 0 1 1 -140 0" fill="none"/>
+  </defs>
+  <text font-family="math" font-size="12" font-weight="bold" fill="#666666" letter-spacing="2px">
+    <textPath href="#circle-text" startOffset="10%">KGAT • 갓 • KOREA</textPath>
+  </text>
+</svg>
