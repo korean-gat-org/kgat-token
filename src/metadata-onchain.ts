@@ -75,15 +75,7 @@ export class OnChainMetadata {
   }
 
   private createMetadataJson(): string {
-    // GitHub 이미지 URL 포함된 메타데이터
-    const metadata = {
-      name: TOKEN_CONFIG.name,
-      symbol: TOKEN_CONFIG.symbol,
-      description: "KGAT Meme Token",
-      image: "https://i.imgur.com/kgat.svg"
-    };
-
-    // Base64로 인코딩된 JSON URI 반환
-    return "data:application/json;base64," + Buffer.from(JSON.stringify(metadata)).toString('base64');
+    // GitHub에서 호스팅되는 JSON 파일 URL 반환
+    return "https://raw.githubusercontent.com/korean-gat-org/kgat-token/main/metadata.json";
   }
 }
