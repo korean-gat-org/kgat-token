@@ -10,7 +10,7 @@ export interface TokenConfig {
 }
 
 export const TOKEN_CONFIG: TokenConfig = {
-  name: "KGAT Token",
+  name: "Korean Gat",
   symbol: "KGAT",
   decimals: 9,
   totalSupply: 1_000_000_000, // 1 billion tokens
@@ -21,10 +21,4 @@ export const TOKEN_CONFIG: TokenConfig = {
 export const SOLANA_CONFIG = {
   cluster: 'devnet' as Cluster,
   rpcUrl: 'https://api.devnet.solana.com'
-};
-
-export const PROGRAM_IDS = {
-  TOKEN_PROGRAM_ID: new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'),
-  ASSOCIATED_TOKEN_PROGRAM_ID: new PublicKey('ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL'),
-  METADATA_PROGRAM_ID: new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
 };
