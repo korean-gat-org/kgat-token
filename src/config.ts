@@ -15,7 +15,7 @@ export const TOKEN_CONFIG: TokenConfig = {
   decimals: 9,
   totalSupply: 1_000_000_000, // 1 billion tokens
   description: "KGAT represents the iconic traditional Korean hat, reimagined as a Solana meme token bridging culture and crypto.",
-  image: "./assets/KGAT-symbol.svg"
+  image: "https://raw.githubusercontent.com/korean-gat-org/kgat-token/main/assets/kgat-512.png"
 };
 
 export const SOLANA_CONFIG = {

@@ -1,25 +1,8 @@
-import {
-  Connection,
-  PublicKey,
-  Keypair,
-  Transaction,
-  sendAndConfirmTransaction,
-} from '@solana/web3.js';
-import {
-  createUmi,
-} from '@metaplex-foundation/umi-bundle-defaults';
-import {
-  createV1,
-  TokenStandard,
-  mplTokenMetadata,
-} from '@metaplex-foundation/mpl-token-metadata';
-import {
-  keypairIdentity,
-  publicKey as umiPublicKey,
-  createSignerFromKeypair,
-} from '@metaplex-foundation/umi';
-import { TOKEN_CONFIG, SOLANA_CONFIG } from './config';
-import { ImageHandler } from './utils/image';
+import {Connection, Keypair, PublicKey,} from '@solana/web3.js';
+import {createUmi,} from '@metaplex-foundation/umi-bundle-defaults';
+import {createV1, mplTokenMetadata, TokenStandard,} from '@metaplex-foundation/mpl-token-metadata';
+import {createSignerFromKeypair, keypairIdentity,} from '@metaplex-foundation/umi';
+import {SOLANA_CONFIG, TOKEN_CONFIG} from './config';
 
 export class OnChainMetadata {
   private connection: Connection;
@@ -45,16 +28,13 @@ export class OnChainMetadata {
       const mintSigner = createSignerFromKeypair(umi, umi.eddsa.createKeypairFromSecretKey(mintKeypair.secretKey));
       umi.use(keypairIdentity(signer));
 
-      // 메타데이터 URI 생성 (실제로는 IPFS나 Arweave 사용 권장)
-      const metadataUri = this.createMetadataJson();
-
       // 메타데이터 생성
       const result = await createV1(umi, {
         mint: mintSigner,
         authority: signer,
         name: TOKEN_CONFIG.name,
         symbol: TOKEN_CONFIG.symbol,
-        uri: metadataUri,
+        uri: this.createMetadataUri(),
         sellerFeeBasisPoints: {
           basisPoints: 0n,
           identifier: '%',
@@ -74,8 +54,9 @@ export class OnChainMetadata {
     }
   }
 
-  private createMetadataJson(): string {
-    // GitHub에서 호스팅되는 JSON 파일 URL 반환
+  private createMetadataUri(): string {
+    // GitHub에 푸시된 metadata.json 파일 참조 (config.ts에서 생성됨)
     return "https://raw.githubusercontent.com/korean-gat-org/kgat-token/main/metadata.json";
   }
+
 }

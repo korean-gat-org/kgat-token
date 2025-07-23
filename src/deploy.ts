@@ -4,9 +4,24 @@ import { MemeToken } from './token';
 import { OnChainMetadata } from './metadata-onchain';
 import { TOKEN_CONFIG } from './config';
 
+function generateMetadataJson() {
+  const metadata = {
+    name: TOKEN_CONFIG.name,
+    symbol: TOKEN_CONFIG.symbol,
+    description: TOKEN_CONFIG.description,
+    image: TOKEN_CONFIG.image,
+  };
+
+  fs.writeFileSync('./metadata.json', JSON.stringify(metadata, null, 2));
+  console.log('metadata.json 생성 완료');
+}
+
 async function deploy() {
   try {
     console.log('=== KGAT 밈토큰 배포 시작 ===');
+    
+    // config.ts에서 metadata.json 생성
+    generateMetadataJson();
     
     // 지갑 키페어 로드 또는 생성
     let payer: Keypair;
